@@ -6,7 +6,6 @@ import pages.MenuPage;
 public class TC401_Invalid_Login extends BaseGUITest {
 
     private LoginPage loginPage;
-    private MenuPage menuPage;
 
     private String username = "admin";
     private String password = "admin";
@@ -14,9 +13,7 @@ public class TC401_Invalid_Login extends BaseGUITest {
     @BeforeClass
     public void pages() {
         loginPage = new LoginPage(driver);
-        menuPage = new MenuPage(driver);
     }
-
 
     @Test(priority = 1, description = "Verify that login page is visible")
     public void loginPage() {
