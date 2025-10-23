@@ -20,7 +20,7 @@ public class TC403_Logout extends BaseGUITest {
 
 
     @Test(priority = 1, description = "Verify user can login successfully before logout")
-    public void loginBeforeRegister() {
+    public void loginBeforeLogout() {
         loginPage.verifyLoginPage();
         LOGGER.info("Login page opened");
         loginPage.fillLoginForm(username, password);
