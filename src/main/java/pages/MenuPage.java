@@ -1,7 +1,9 @@
 package pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class MenuPage extends BasePage {
 
@@ -16,6 +18,19 @@ public class MenuPage extends BasePage {
 
     @FindBy(css = "li.nav-item.logout > a")
     private WebElement logoutButton;
+
+    @FindBy(css = "i.icon-user")
+    private WebElement profileIcon;
+
+    @FindBy(css = "#user-account-menu > li > a")
+    private WebElement myAccountsLink;
+
+    @FindBy(css = "#tasks > a:nth-child(1) > div")
+    private WebElement changePasswordButton;
+
+    @FindBy(css = "#tasks > a:nth-child(2) > div")
+    private WebElement myLanguagesButton;
+
 
     @FindBy(id = "referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension")
     private WebElement registerPatientButton;
@@ -54,12 +69,12 @@ public class MenuPage extends BasePage {
         LOGGER.info("Logout is displayed");
     }
 
-    public void clickLogoutButton(){
+    public void clickLogoutButton() {
         clickElement(logoutButton);
         LOGGER.info("Logout button clicked");
     }
 
-    public void clickRegisterPatientButton(){
+    public void clickRegisterPatientButton() {
         clickElement(registerPatientButton);
         LOGGER.info("Register a Patient button clicked");
     }
@@ -77,5 +92,28 @@ public class MenuPage extends BasePage {
     public void clickMergePatientRecordsButton() {
         clickElement(mergePatientRecordsButton);
         LOGGER.info("Merge Patient Electronic Records button clicked");
+    }
+
+    public void hoverOverProfileIcon() {
+        Actions actions = new Actions(driver);
+        actions.moveToElement(profileIcon).perform();
+        LOGGER.info("Hovered over profile icon");
+    }
+
+    public void clickMyAccountsLink() {
+        clickElement(myAccountsLink);
+        LOGGER.info("[My Accounts] link clicked");
+    }
+
+    public void verifyChangePasswordButton() {
+        verifyDisplayed(changePasswordButton, "Change Password");
+        wait.until(ExpectedConditions.elementToBeClickable(changePasswordButton));
+        LOGGER.info("Change Password button is visible and clickable");
+    }
+
+    public void verifyMyLanguagesButton() {
+        verifyDisplayed(myLanguagesButton, "My Languages");
+        wait.until(ExpectedConditions.elementToBeClickable(myLanguagesButton));
+        LOGGER.info("My Languages button is visible and clickable");
     }
 }

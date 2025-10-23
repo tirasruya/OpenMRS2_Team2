@@ -8,7 +8,6 @@ public class TC403_Logout extends BaseGUITest {
     private LoginPage loginPage;
     private MenuPage menuPage;
 
-
     private String username = "admin";
     private String password = "Admin123";
 
@@ -17,7 +16,6 @@ public class TC403_Logout extends BaseGUITest {
         loginPage = new LoginPage(driver);
         menuPage = new MenuPage(driver);
     }
-
 
     @Test(priority = 1, description = "Verify user can login successfully before logout")
     public void loginBeforeLogout() {
