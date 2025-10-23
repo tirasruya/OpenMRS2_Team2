@@ -23,8 +23,8 @@ public class TC409_Merge extends BaseGUITest {
         loginPage = new LoginPage(driver);
     }
 
-    @Test(priority = 1, description = "Verify user can login successfully before registration")
-    public void loginBeforeRegister() {
+    @Test(priority = 1, description = "Verify user can login successfully")
+    public void login() {
         loginPage.verifyLoginPage();
         LOGGER.info("Login page opened");
         loginPage.fillLoginForm(username, password);
