@@ -11,6 +11,12 @@ public class MenuPage extends BasePage {
     @FindBy(css = "#navbarSupportedContent > ul > li.identifier")
     private WebElement adminText;
 
+    @FindBy(id = "selected-location")
+    private WebElement locationText;
+
+    @FindBy(css = "li.nav-item.logout > a")
+    private WebElement logoutButton;
+
     @FindBy(id = "referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension")
     private WebElement registerPatientButton;
 
@@ -36,6 +42,21 @@ public class MenuPage extends BasePage {
     public void verifyAdminLogin() {
         verifyDisplayed(adminText, "admin");
         LOGGER.info("Login successful");
+    }
+
+    public void verifyLocation() {
+        verifyDisplayed(locationText, "Inpatient Ward");
+        LOGGER.info("Location is correct");
+    }
+
+    public void verifyLogout() {
+        verifyDisplayed(logoutButton, "Logout");
+        LOGGER.info("Logout is displayed");
+    }
+
+    public void clickLogoutButton(){
+        clickElement(logoutButton);
+        LOGGER.info("Logout button clicked");
     }
 
     public void clickRegisterPatientButton(){
