@@ -10,9 +10,6 @@ public class TC410_Appointment_TimeZoneCheck extends BaseGUITest {
     private FindPatientPage findPatientPage;
     private LoginPage loginPage;
 
-    private String username = "admin";
-    private String password = "Admin123";
-
     @BeforeClass
     public void pages() {
         menuPage = new MenuPage(driver);
@@ -35,7 +32,7 @@ public class TC410_Appointment_TimeZoneCheck extends BaseGUITest {
         LOGGER.info("Find Patient Record page loaded");
 
         String id1 = findPatientPage.getFirstPatientID();
-        LOGGER.info("Patient with ID: " + id1);
+        LOGGER.info("Patient with ID: {}", id1);
 
         menuPage.navigateHome();
         LOGGER.info("Navigated back to homepage");
@@ -47,7 +44,7 @@ public class TC410_Appointment_TimeZoneCheck extends BaseGUITest {
         LOGGER.info("Manage Appointments clicked");
 
         appointmentPage.searchPatient(id1);
-        LOGGER.info("Patient searched with ID: " + id1);
+        LOGGER.info("Patient searched with ID: {}", id1);
 
         appointmentPage.selectSearchedPatient();
         LOGGER.info("Patient selected from search results");
