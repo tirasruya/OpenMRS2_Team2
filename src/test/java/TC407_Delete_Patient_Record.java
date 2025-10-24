@@ -22,7 +22,7 @@ public class TC407_Delete_Patient_Record extends BaseGUITest {
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
-        LoginHelper.login(loginPage, menuPage, LOGGER, username, password);
+        LoginHelper.login(loginPage, menuPage, LOGGER);
     }
 
     @Test(priority = 2, description = "Verify doctor can find and open patient record")
