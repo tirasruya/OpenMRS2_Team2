@@ -4,15 +4,11 @@ import org.testng.annotations.Test;
 import pages.*;
 
 public class TC406_Find_Patience_Records_P extends BaseGUITest {
-
+    /** TODO */
     private MenuPage menuPage;
     private FindPatientPage findPatientPage;
     private LoginPage loginPage;
     private PatientPage patientPage;
-
-    private String username = "admin";
-    private String password = "Admin123";
-    private String patientID1 = "100J9R";
 
     @BeforeClass
     public void pages() {
@@ -24,7 +20,7 @@ public class TC406_Find_Patience_Records_P extends BaseGUITest {
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
-        LoginHelper.login(loginPage, menuPage, LOGGER, username, password);
+        LoginHelper.login(loginPage, menuPage, LOGGER);
     }
 
     @Test(priority = 2, description = "Verify patient record page opened")
@@ -38,6 +34,7 @@ public class TC406_Find_Patience_Records_P extends BaseGUITest {
 
     @Test(priority = 3, description = "Find patient records")
     public void findPatientRecord() {
+        patientID1 = "100J9R";
         findPatientPage.patientSearch(patientID1);
         LOGGER.info("Patient searched successfully");
 
