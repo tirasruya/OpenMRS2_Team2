@@ -21,7 +21,7 @@ public class TC404_Register extends BaseGUITest {
 
     @Test(priority = 1, description = "Verify user can login successfully before registration")
     public void loginBeforeRegister() {
-        LoginHelper.login(loginPage, menuPage, LOGGER, username, password);
+        LoginHelper.login(loginPage, menuPage, LOGGER);
     }
 
     @Test(priority = 2, description = "Verify that user can open Register a Patient form")
