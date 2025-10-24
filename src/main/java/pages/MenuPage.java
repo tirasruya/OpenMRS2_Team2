@@ -31,7 +31,6 @@ public class MenuPage extends BasePage {
     @FindBy(css = "#tasks > a:nth-child(2) > div")
     private WebElement myLanguagesButton;
 
-
     @FindBy(id = "referenceapplication-registrationapp-registerPatient-homepageLink-referenceapplication-registrationapp-registerPatient-homepageLink-extension")
     private WebElement registerPatientButton;
 
@@ -44,6 +43,8 @@ public class MenuPage extends BasePage {
     @FindBy(id = "coreapps-mergePatientsHomepageLink-app")
     private WebElement mergePatientRecordsButton;
 
+    @FindBy(id = "appointmentschedulingui-homeAppLink-appointmentschedulingui-homeAppLink-extension")
+    private WebElement appointmentSchedulingButton;
 
     public MenuPage(final WebDriver driver) {
         super(driver);
@@ -115,5 +116,10 @@ public class MenuPage extends BasePage {
         verifyDisplayed(myLanguagesButton, "My Languages");
         wait.until(ExpectedConditions.elementToBeClickable(myLanguagesButton));
         LOGGER.info("My Languages button is visible and clickable");
+    }
+
+    public void clickAppointmentScheduling() {
+        clickElement(appointmentSchedulingButton);
+        LOGGER.info("Appointment Scheduling clicked");
     }
 }
