@@ -33,31 +33,6 @@ All automated tests are executed on the official OpenMRS Demo Environment:
 * **Reporting Tools:** Allure / Extent Reports
 * **Supported Browsers:** Chrome, Firefox, Safari
 * **Environment:** [OpenMRS Demo](https://o2.openmrs.org/openmrs/login.htm)
-
-## ⚙️ Setup & Execution
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/tirasruya/OpenMRS2_Team2.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd openmrs-automation
-```
-
-3. Install dependencies:
-
-```bash
-mvn clean install
-```
-
-4. Run test suites:
-
-```bash
-mvn test -DsuiteXmlFile=testng.xml
 ```
 
 ## 🧪 Testing Approach
@@ -75,22 +50,6 @@ mvn test -DsuiteXmlFile=testng.xml
 * Positive and negative scenario validation
 * Cross-browser consistency checks
 * Dynamic and reusable page methods with synchronization using explicit waits
-
-## 📂 Project Structure
-
-```
-openmrs-automation/
-│
-├── src/
-│   ├── main/java/pages/          # Page Object Models
-│   ├── test/java/tests/          # Automated test classes
-│   └── test/resources/           # Test data and configuration files
-│
-├── pom.xml                       # Maven project configuration
-├── testng.xml                    # Test suite definition
-├── README.md                     # Documentation
-└── reports/                      # Test execution reports
-```
 
 ## 👩‍💻 Author
 
