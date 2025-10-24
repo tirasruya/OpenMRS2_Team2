@@ -11,7 +11,8 @@ public class BaseGUITest {
     protected WebDriver driver;
     protected final String username = "admin";
     protected final String password = "Admin123";
-    protected final String patientID1 = "xxxxx";
+    protected String patientID1 = "xxxxx";
+    protected String deleteReason = "Test deletion for automation verification";
 
     @BeforeClass
     public void init(){
