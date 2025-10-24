@@ -7,6 +7,9 @@ public class TC403_Logout extends BaseGUITest {
 
     private LoginPage loginPage;
     private MenuPage menuPage;
+    private final String username = "admin";
+    private final String password = "Admin123";
+
 
     @BeforeClass
     public void pages() {
