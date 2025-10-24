@@ -17,6 +17,9 @@ public class PatientPage extends BasePage {
     @FindBy(css = "#content > div.patient-header.row > div.identifiers.mt-2.col-12.col-sm-5.col-md-4 > div > span")
     private WebElement patientId;
 
+    @FindBy(xpath = "//*[@id='org.openmrs.module.coreapps.deletePatient']")
+    private WebElement deletePatientLink;
+
     public PatientPage(WebDriver driver) {
         super(driver);
     }
@@ -33,4 +36,10 @@ public class PatientPage extends BasePage {
         Assert.assertTrue(patientId.isDisplayed());
         LOGGER.info("Patient name and ID are displayed successfully");
     }
+
+    public void clickDeletePatientLink() {
+        clickElement(deletePatientLink);
+        LOGGER.info("Delete Patient link clicked");
+    }
+
 }
