@@ -8,7 +8,7 @@ public class TC406_Find_Patience_Records_N extends BaseGUITest {
     private MenuPage menuPage;
     private FindPatientPage findPatientPage;
     private LoginPage loginPage;
-    
+
     @BeforeClass
     public void pages() {
         menuPage = new MenuPage(driver);
