@@ -6,7 +6,10 @@ import pages.MenuPage;
 
 public class LoginHelper {
 
-    public static void login(final LoginPage loginPage, final MenuPage menuPage, final Logger LOGGER, final String username, final String password) {
+    private static final String username = "admin";
+    private static final String password = "Admin123";
+
+    public static void login(final LoginPage loginPage, final MenuPage menuPage, final Logger LOGGER) {
         loginPage.verifyLoginPage();
         LOGGER.info("Login page opened");
         loginPage.fillLoginForm(username, password);
