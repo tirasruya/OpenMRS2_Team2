@@ -1,4 +1,5 @@
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MenuPage;
@@ -8,8 +9,8 @@ public class TC402_Login extends BaseGUITest {
     private LoginPage loginPage;
     private MenuPage menuPage;
 
-    private String username = "admin";
-    private String password = "Admin123";
+//    private String username = "admin";
+//    private String password = "Admin123";
 
     @BeforeClass
     public void pages() {
@@ -17,9 +18,21 @@ public class TC402_Login extends BaseGUITest {
         menuPage = new MenuPage(driver);
     }
 
+    @DataProvider(name = "userData")
+    public Object[][] provideData() {
+        return new Object[][]{
+                {"A", "12345"},
+                {"B", "abcde"},
+                {"C", "123"},
+                {"D", "pass"},
+                {"E", "pass123"},
+                {"F", "pass12345"},
+                {"admin", "Admin123"}
+        };
+    }
 
-    @Test(priority = 1, description = "Verify that login page is visible")
-    public void loginPage() {
+    @Test(priority = 1, description = "Verify that login page is visible", dataProvider = "userData")
+    public void loginPage(String username, String password) {
         loginPage.verifyLoginPage();
         LOGGER.info("Login page opened");
 

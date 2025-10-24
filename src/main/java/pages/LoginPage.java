@@ -27,6 +27,7 @@ public class LoginPage extends BasePage {
     @FindBy(id = "error-message")
     private WebElement invalidLoginWarning;
 
+
     public LoginPage(final WebDriver driver) {
         super(driver);
     }
