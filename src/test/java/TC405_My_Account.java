@@ -9,9 +9,6 @@ public class TC405_My_Account extends BaseGUITest {
     private LoginPage loginPage;
     private MenuPage menuPage;
 
-    private String username = "admin";
-    private String password = "Admin123";
-
     @BeforeClass
     public void pages() {
         loginPage = new LoginPage(driver);
