@@ -13,9 +13,6 @@ public class TC409_Merge extends BaseGUITest {
     private String id1;
     private String id2;
 
-    private String username = "admin";
-    private String password = "Admin123";
-
     @BeforeClass
     public void pages() {
         menuPage = new MenuPage(driver);
@@ -36,7 +33,7 @@ public class TC409_Merge extends BaseGUITest {
 
         id1 = findPatientPage.getFirstPatientID();
         id2 = findPatientPage.getSecondPatientID();
-        LOGGER.info("Patient IDs recorded: " + id1 + ", " + id2);
+        LOGGER.info("Patient IDs recorded: {}, {}", id1, id2);
 
         menuPage.navigateHome();
         LOGGER.info("Navigated back to homepage");
@@ -51,7 +48,7 @@ public class TC409_Merge extends BaseGUITest {
         LOGGER.info("Merge Patient Electronic Records button clicked");
 
         mergePatientPage.enterPatientIDs(id1, id2);
-        LOGGER.info("Entered patient IDs: " + id1 + ", " + id2);
+        LOGGER.info("Entered patient IDs: {}, {}", id1, id2);
 
         mergePatientPage.clickPage();
 
