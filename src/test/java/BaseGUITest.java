@@ -9,8 +9,6 @@ public class BaseGUITest {
 
     protected final Logger LOGGER = LogManager.getLogger(this.getClass());
     protected WebDriver driver;
-    protected final String username = "admin";
-    protected final String password = "Admin123";
     protected String patientID1 = "xxxxx";
     protected String deleteReason = "Test deletion for automation verification";
 
