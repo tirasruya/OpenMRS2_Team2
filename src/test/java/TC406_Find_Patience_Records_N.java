@@ -7,7 +7,6 @@ public class TC406_Find_Patience_Records_N extends BaseGUITest {
     private MenuPage menuPage;
     private FindPatientPage findPatientPage;
     private LoginPage loginPage;
-    private PatientPage patientPage;
 
     private String username = "admin";
     private String password = "Admin123";
@@ -18,7 +17,6 @@ public class TC406_Find_Patience_Records_N extends BaseGUITest {
         menuPage = new MenuPage(driver);
         findPatientPage = new FindPatientPage(driver);
         loginPage = new LoginPage(driver);
-        patientPage = new PatientPage(driver);
     }
 
     @Test(priority = 1, description = "Verify user can login successfully")

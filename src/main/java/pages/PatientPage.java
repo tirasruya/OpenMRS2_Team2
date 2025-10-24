@@ -41,5 +41,4 @@ public class PatientPage extends BasePage {
         clickElement(deletePatientLink);
         LOGGER.info("Delete Patient link clicked");
     }
-
 }
