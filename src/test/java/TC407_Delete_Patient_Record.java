@@ -11,10 +11,6 @@ public class TC407_Delete_Patient_Record extends BaseGUITest {
     private LoginPage loginPage;
     private DeletePatientPage deletePatientPage;
 
-    private String username = "admin";
-    private String password = "Admin123";
-    private String deleteReason = "Test deletion for automation verification";
-
     @BeforeClass
     public void pages() {
         menuPage = new MenuPage(driver);
@@ -39,7 +35,7 @@ public class TC407_Delete_Patient_Record extends BaseGUITest {
 
         String id1 = findPatientPage.getFirstPatientID();
         findPatientPage.patientSearch(id1);
-        LOGGER.info("Patient searched with ID: " + id1);
+        LOGGER.info("Patient searched with ID: {}", id1);
 
         findPatientPage.verifySearchedPatient();
         LOGGER.info("Searched patient found and clickable");
@@ -62,7 +58,5 @@ public class TC407_Delete_Patient_Record extends BaseGUITest {
         deletePatientPage.confirmDeletion();
         LOGGER.info("Delete confirmation submitted");
 
-//        deletePatientPage.verifyPatientDeleted();
-//        LOGGER.info("Patient successfully deleted from the system");
     }
 }
