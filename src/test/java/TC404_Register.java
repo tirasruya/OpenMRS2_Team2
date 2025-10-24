@@ -10,9 +10,6 @@ public class TC404_Register extends BaseGUITest {
     private MenuPage menuPage;
     private PatientPage patientPage;
 
-    private String username = "admin";
-    private String password = "Admin123";
-
     @BeforeClass
     public void pages() {
         loginPage = new LoginPage(driver);
