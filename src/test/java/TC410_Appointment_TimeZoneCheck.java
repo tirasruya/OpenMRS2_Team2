@@ -1,3 +1,4 @@
+import helper.LoginHelper;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.*;
@@ -22,16 +23,7 @@ public class TC410_Appointment_TimeZoneCheck extends BaseGUITest {
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
-        loginPage.verifyLoginPage();
-        LOGGER.info("Login page opened");
-        loginPage.fillLoginForm(username, password);
-        LOGGER.info("Username and password entered");
-        loginPage.clickLocationButton();
-        LOGGER.info("Location selected");
-        loginPage.clickLoginButton();
-        LOGGER.info("Login button clicked");
-        menuPage.verifyAdminLogin();
-        LOGGER.info("Login successful");
+        LoginHelper.login(loginPage, menuPage, LOGGER, username, password);
     }
 
     @Test(priority = 2, description = "Verify appointment scheduling error for wrong timezone")
