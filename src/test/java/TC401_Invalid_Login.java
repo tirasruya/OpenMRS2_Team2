@@ -8,9 +8,6 @@ public class TC401_Invalid_Login extends BaseGUITest {
 
     private LoginPage loginPage;
 
-//    private String username = "admin";
-//    private String password = "admin";
-
     @DataProvider(name = "userData")
     public Object[][] provideData() {
         return new Object[][]{
