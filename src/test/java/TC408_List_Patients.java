@@ -10,9 +10,6 @@ public class TC408_List_Patients extends BaseGUITest {
     private FindPatientPage findPatientPage;
     private LoginPage loginPage;
 
-    private String username = "admin";
-    private String password = "Admin123";
-
     @BeforeClass
     public void pages() {
         menuPage = new MenuPage(driver);
@@ -34,17 +31,17 @@ public class TC408_List_Patients extends BaseGUITest {
         LOGGER.info("Find Patient Record page loaded");
 
         int totalCount = findPatientPage.getTotalPatientsFromFooter();
-        LOGGER.info("Total patients from footer: " + totalCount);
+        LOGGER.info("Total patients from footer: {}", totalCount);
 
         int allRowsCount = 0;
 
         do {
             int rowsOnPage = findPatientPage.getPatientTableRowCount();
-            LOGGER.info("Rows on current page: " + rowsOnPage);
+            LOGGER.info("Rows on current page: {}", rowsOnPage);
             allRowsCount += rowsOnPage;
         } while (findPatientPage.clickNextPageIfAvailable());
 
-        LOGGER.info("Total rows across all pages: " + allRowsCount);
+        LOGGER.info("Total rows across all pages: {}", allRowsCount);
         Assert.assertEquals(allRowsCount, totalCount, "Total rows do not match footer total count");
         LOGGER.info("All patient rows across pages match footer total count successfully");
     }
