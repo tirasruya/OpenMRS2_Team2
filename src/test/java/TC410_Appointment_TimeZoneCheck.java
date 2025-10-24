@@ -20,7 +20,7 @@ public class TC410_Appointment_TimeZoneCheck extends BaseGUITest {
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
-        LoginHelper.login(loginPage, menuPage, LOGGER, username, password);
+        LoginHelper.login(loginPage, menuPage, LOGGER);
     }
 
     @Test(priority = 2, description = "Verify appointment scheduling error for wrong timezone")
