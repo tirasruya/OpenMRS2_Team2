@@ -9,6 +9,9 @@ public class BaseGUITest {
 
     protected final Logger LOGGER = LogManager.getLogger(this.getClass());
     protected WebDriver driver;
+    protected final String username = "admin";
+    protected final String password = "Admin123";
+    protected final String patientID1 = "xxxxx";
 
     @BeforeClass
     public void init(){

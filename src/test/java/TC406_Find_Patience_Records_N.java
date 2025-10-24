@@ -8,11 +8,7 @@ public class TC406_Find_Patience_Records_N extends BaseGUITest {
     private MenuPage menuPage;
     private FindPatientPage findPatientPage;
     private LoginPage loginPage;
-
-    private String username = "admin";
-    private String password = "Admin123";
-    private String patientID1 = "xxxxx";
-
+    
     @BeforeClass
     public void pages() {
         menuPage = new MenuPage(driver);
