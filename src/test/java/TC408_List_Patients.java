@@ -19,7 +19,7 @@ public class TC408_List_Patients extends BaseGUITest {
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
-        LoginHelper.login(loginPage, menuPage, LOGGER, username, password);
+        LoginHelper.login(loginPage, menuPage, LOGGER);
     }
 
     @Test(priority = 2, description = "Verify patient list and total count across all pages")
