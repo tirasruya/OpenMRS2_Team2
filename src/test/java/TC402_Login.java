@@ -1,22 +1,7 @@
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.MenuPage;
 
 public class TC402_Login extends BaseGUITest {
-
-    private LoginPage loginPage;
-    private MenuPage menuPage;
-
-//    private String username = "admin";
-//    private String password = "Admin123";
-
-    @BeforeClass
-    public void pages() {
-        loginPage = new LoginPage(driver);
-        menuPage = new MenuPage(driver);
-    }
 
     @DataProvider(name = "userData")
     public Object[][] provideData() {

@@ -1,15 +1,7 @@
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.MenuPage;
 
 public class TC401_Invalid_Login extends BaseGUITest {
-
-    private LoginPage loginPage;
-
-//    private String username = "admin";
-//    private String password = "admin";
 
     @DataProvider(name = "userData")
     public Object[][] provideData() {
@@ -21,11 +13,6 @@ public class TC401_Invalid_Login extends BaseGUITest {
                 {"E", "pass123"},
                 {"F", "pass12345"}
         };
-    }
-
-    @BeforeClass
-    public void pages() {
-        loginPage = new LoginPage(driver);
     }
 
     @Test(priority = 1, description = "Verify that login page is visible")

@@ -1,40 +1,11 @@
-import org.testng.annotations.BeforeClass;
+import helper.LoginHelper;
 import org.testng.annotations.Test;
-import pages.*;
 
 public class TC407_Delete_Patient_Record extends BaseGUITest {
 
-    private MenuPage menuPage;
-    private FindPatientPage findPatientPage;
-    private PatientPage patientPage;
-    private LoginPage loginPage;
-    private DeletePatientPage deletePatientPage;
-
-    private String username = "admin";
-    private String password = "Admin123";
-    private String deleteReason = "Test deletion for automation verification";
-
-    @BeforeClass
-    public void pages() {
-        menuPage = new MenuPage(driver);
-        findPatientPage = new FindPatientPage(driver);
-        patientPage = new PatientPage(driver);
-        loginPage = new LoginPage(driver);
-        deletePatientPage = new DeletePatientPage(driver);
-    }
-
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
-        loginPage.verifyLoginPage();
-        LOGGER.info("Login page opened");
-        loginPage.fillLoginForm(username, password);
-        LOGGER.info("Username and password entered");
-        loginPage.clickLocationButton();
-        LOGGER.info("Location button clicked");
-        loginPage.clickLoginButton();
-        LOGGER.info("Login button clicked");
-        menuPage.verifyAdminLogin();
-        LOGGER.info("Login successful");
+        LoginHelper.login(loginPage, menuPage, LOGGER);
     }
 
     @Test(priority = 2, description = "Verify doctor can find and open patient record")
@@ -47,7 +18,7 @@ public class TC407_Delete_Patient_Record extends BaseGUITest {
 
         String id1 = findPatientPage.getFirstPatientID();
         findPatientPage.patientSearch(id1);
-        LOGGER.info("Patient searched with ID: " + id1);
+        LOGGER.info("Patient searched with ID: {}", id1);
 
         findPatientPage.verifySearchedPatient();
         LOGGER.info("Searched patient found and clickable");
@@ -70,7 +41,5 @@ public class TC407_Delete_Patient_Record extends BaseGUITest {
         deletePatientPage.confirmDeletion();
         LOGGER.info("Delete confirmation submitted");
 
-//        deletePatientPage.verifyPatientDeleted();
-//        LOGGER.info("Patient successfully deleted from the system");
     }
 }

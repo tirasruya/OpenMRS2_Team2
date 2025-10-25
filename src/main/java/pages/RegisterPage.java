@@ -45,6 +45,21 @@ public class RegisterPage extends BasePage {
         LOGGER.info("Verify Register Patient page is displayed");
     }
 
+    public void registerPatient(final String firstName, final String lastName, final String gender, final String age, final String address, final String phone, final String relationship) {
+        enterName(firstName, lastName);
+        clickNext();
+        selectGender(gender);
+        clickNext();
+        enterAge(age);
+        clickNext();
+        enterAddress(address);
+        clickNext();
+        enterPhoneNumber(phone);
+        clickNext();
+        selectRelationship(relationship);
+        clickNext();
+    }
+
     public void enterName(final String firstName, final String lastName) {
         sendKeysToElement(firstNameInput, firstName);
         LOGGER.info("First name entered");
