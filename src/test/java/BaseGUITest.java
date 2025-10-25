@@ -18,16 +18,15 @@ public class BaseGUITest {
     protected DeletePatientPage deletePatientPage;
     protected MergePatientPage mergePatientPage;
     protected AppointmentPage appointmentPage;
-    protected String patientID1 = "xxxxx";
     protected String deleteReason = "Test deletion for automation verification";
 
     @BeforeClass
-    public void init(){
-        driver  = BaseDriver.driver("https://o2.openmrs.org/openmrs/login.htm");
+    public void init() {
+        driver = BaseDriver.driver("https://o2.openmrs.org/openmrs/login.htm");
         LOGGER.info("The website opened.");
         loginPage = new LoginPage(driver);
         registerPage = new RegisterPage(driver);
-        menuPage =new MenuPage(driver);
+        menuPage = new MenuPage(driver);
         findPatientPage = new FindPatientPage(driver);
         patientPage = new PatientPage(driver);
         deletePatientPage = new DeletePatientPage(driver);

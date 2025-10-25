@@ -3,6 +3,8 @@ import org.testng.annotations.Test;
 
 public class TC406_Find_Patience_Records_N extends BaseGUITest {
 
+    private String patientID1 = "xxxxx";
+
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
         LoginHelper.login(loginPage, menuPage, LOGGER);

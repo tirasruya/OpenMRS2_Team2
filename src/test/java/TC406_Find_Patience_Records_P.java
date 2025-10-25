@@ -2,7 +2,8 @@ import helper.LoginHelper;
 import org.testng.annotations.Test;
 
 public class TC406_Find_Patience_Records_P extends BaseGUITest {
-    /** TODO */
+
+    private String patientID1 = "100J9R";
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
@@ -20,7 +21,7 @@ public class TC406_Find_Patience_Records_P extends BaseGUITest {
 
     @Test(priority = 3, description = "Find patient records")
     public void findPatientRecord() {
-        patientID1 = "100J9R";
+
         findPatientPage.patientSearch(patientID1);
         LOGGER.info("Patient searched successfully");
 
