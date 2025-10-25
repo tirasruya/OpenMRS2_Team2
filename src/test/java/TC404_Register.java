@@ -1,23 +1,8 @@
+import data.PatientData;
 import helper.LoginHelper;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.*;
 
 public class TC404_Register extends BaseGUITest {
-
-    private LoginPage loginPage;
-    private RegisterPage registerPage;
-    private MenuPage menuPage;
-    private PatientPage patientPage;
-
-    @BeforeClass
-    public void pages() {
-        loginPage = new LoginPage(driver);
-        registerPage = new RegisterPage(driver);
-        menuPage = new MenuPage(driver);
-        patientPage = new PatientPage(driver);
-    }
-
 
     @Test(priority = 1, description = "Verify user can login successfully before registration")
     public void loginBeforeRegister() {
@@ -33,43 +18,11 @@ public class TC404_Register extends BaseGUITest {
         LOGGER.info("Register a Patient form opened");
     }
 
-    @Test(priority = 3, description = "Verify that user can fill patient details and register successfully")
-    public void registerNewPatient() {
-        registerPage.enterName("John", "Doe");
-        LOGGER.info("Name and Surname entered");
+    @Test(priority = 3, description = "Verify that user can fill patient details and register successfully",
+    dataProvider = "patientData", dataProviderClass = PatientData.class)
+    public void registerNewPatient(String firstname, String lastname, String gender, String age, String address, String phone, String relationship) {
 
-        registerPage.clickNext();
-        LOGGER.info("Next button clicked");
-
-        registerPage.selectGender("Male");
-        LOGGER.info("Gender selected");
-
-        registerPage.clickNext();
-        LOGGER.info("Next button clicked");
-
-        registerPage.enterAge("20");
-        LOGGER.info("Age entered");
-
-        registerPage.clickNext();
-        LOGGER.info("Next button clicked");
-
-        registerPage.enterAddress("Main St");
-        LOGGER.info("Contact info entered");
-
-        registerPage.clickNext();
-        LOGGER.info("Next button clicked");
-
-        registerPage.enterPhoneNumber("11111");
-        LOGGER.info("Phone number entered");
-
-        registerPage.clickNext();
-        LOGGER.info("Next button clicked");
-
-        registerPage.selectRelationship("Parent");
-        LOGGER.info("Relationship data entered");
-
-        registerPage.clickNext();
-        LOGGER.info("Next button clicked");
+        registerPage.registerPatient(firstname, lastname, gender, age, address, phone, relationship);
 
         registerPage.clickConfirmButton();
         LOGGER.info("Confirm button clicked");

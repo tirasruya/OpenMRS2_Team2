@@ -1,19 +1,7 @@
 import helper.LoginHelper;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.LoginPage;
-import pages.MenuPage;
 
 public class TC405_My_Account extends BaseGUITest {
-
-    private LoginPage loginPage;
-    private MenuPage menuPage;
-
-    @BeforeClass
-    public void pages() {
-        loginPage = new LoginPage(driver);
-        menuPage = new MenuPage(driver);
-    }
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {

@@ -1,25 +1,10 @@
 import helper.LoginHelper;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.*;
 
 public class TC409_Merge extends BaseGUITest {
 
-    private MenuPage menuPage;
-    private FindPatientPage findPatientPage;
-    private MergePatientPage mergePatientPage;
-    private LoginPage loginPage;
-
     private String id1;
     private String id2;
-
-    @BeforeClass
-    public void pages() {
-        menuPage = new MenuPage(driver);
-        findPatientPage = new FindPatientPage(driver);
-        mergePatientPage = new MergePatientPage(driver);
-        loginPage = new LoginPage(driver);
-    }
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {

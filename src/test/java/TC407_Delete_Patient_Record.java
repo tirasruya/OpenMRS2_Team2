@@ -1,24 +1,7 @@
 import helper.LoginHelper;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.*;
 
 public class TC407_Delete_Patient_Record extends BaseGUITest {
-
-    private MenuPage menuPage;
-    private FindPatientPage findPatientPage;
-    private PatientPage patientPage;
-    private LoginPage loginPage;
-    private DeletePatientPage deletePatientPage;
-
-    @BeforeClass
-    public void pages() {
-        menuPage = new MenuPage(driver);
-        findPatientPage = new FindPatientPage(driver);
-        patientPage = new PatientPage(driver);
-        loginPage = new LoginPage(driver);
-        deletePatientPage = new DeletePatientPage(driver);
-    }
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {

@@ -1,22 +1,8 @@
 import helper.LoginHelper;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.*;
 
 public class TC406_Find_Patience_Records_P extends BaseGUITest {
     /** TODO */
-    private MenuPage menuPage;
-    private FindPatientPage findPatientPage;
-    private LoginPage loginPage;
-    private PatientPage patientPage;
-
-    @BeforeClass
-    public void pages() {
-        menuPage = new MenuPage(driver);
-        findPatientPage = new FindPatientPage(driver);
-        loginPage = new LoginPage(driver);
-        patientPage = new PatientPage(driver);
-    }
 
     @Test(priority = 1, description = "Verify user can login successfully")
     public void login() {
